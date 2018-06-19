@@ -10,9 +10,39 @@
  */
 char firstNonRepeatingChar (char sentence[], int length)
 {
-    printf("\nfirstNonRepeatingChar::START: %s, %d\n", s, length);
+    printf("\nfirstNonRepeatingChar::START: %s, %d\n", sentence, length);
     
-    // TODO: YOUR CODE HERE!
+    int c,j = 0;
+    int freq;
+    char letra;
+
+  
+    for (c = 0; c < length; c++){
+
+        if(sentence[c] == ' '){
+               c++;
+        }
+        letra = sentence[c];
+        freq = 0;
+        for(j = 0; j < length; j++){
+
+            if(letra == sentence[j]){
+                freq++;
+            }   
+       }
+
+        if(freq < 2){
+            printf("%c", letra);
+            printf("\nfirstNonRepeatingChar::END\n");
+            return -1;
+        }
+        
+    }
+    
+
+    printf("%d\n", -1);
+    printf("\nfirstNonRepeatingChar::END\n");
+    return -1; 
     
     printf("\nfirstNonRepeatingChar::END\n");
     return -1;
